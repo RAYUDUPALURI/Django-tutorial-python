@@ -50,11 +50,11 @@ cd myproject
 # Start the development server
 python manage.py runserver
 
-Creating a New Application in Django
+### Creating a New Application in Django
 # Inside your project directory, create a new application
 python manage.py startapp myapp
 
-Defining a Model in Django
+### Defining a Model in Django
 # In myapp/models.py
 from django.db import models
 
@@ -62,7 +62,7 @@ class MyModel(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
 
-Creating Views in Django
+### Creating Views in Django
 # In myapp/views.py
 from django.shortcuts import render
 from .models import MyModel
@@ -71,7 +71,7 @@ def index(request):
     items = MyModel.objects.all()
     return render(request, 'index.html', {'items': items})
 
-Configuring URLs in Django
+### Configuring URLs in Django
 # In myproject/urls.py
 from django.urls import path
 from myapp import views
@@ -80,7 +80,7 @@ urlpatterns = [
     path('', views.index, name='index'),
 ]
 
-Writing Templates in Django
+### Writing Templates in Django
 <!-- In templates/index.html -->
 <!DOCTYPE html>
 <html>
